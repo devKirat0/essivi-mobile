@@ -1,4 +1,5 @@
 
+import 'package:essivi_sarl_final/statics/static_attributs.dart';
 import 'package:essivi_sarl_final/statics/widget.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,8 @@ class _PasswordForgotScreenState extends State<PasswordForgotScreen>{
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
+        title: const Text(Statics.textEnterprise),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(

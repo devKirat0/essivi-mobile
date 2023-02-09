@@ -43,6 +43,7 @@ class _NavigationState extends State<NavigationDrawer>{
     child: Column(
       children: [
         Container(
+          height: MediaQuery.of(context).size.height/4,
           margin: const EdgeInsets.all(15),
           child: ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(10)),

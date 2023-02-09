@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class GetConnexionInfo{
@@ -22,6 +23,9 @@ class GetConnexionInfo{
       "role_id": prefs.getInt("role_id"),
       "label": prefs.getString("label")
     };
+    if (kDebugMode) {
+      print(informations);
+    }
     return informations;
   }
 

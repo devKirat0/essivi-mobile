@@ -48,15 +48,27 @@ class _CustomerCommandsState extends State<CustomerCommands>{
               ],
             ),
             Row(
-              children: const[
-                SizedBox(width: 5,),
-                Text(
-                  "Ses commandes :",
+              children: [
+                const SizedBox(width: 10,),
+                const Text(
+                  "Localisation",
                   style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Montserrat'
+                    fontSize: 18,
+                    fontFamily: 'Montserrat'
                   ),
                 ),
+                IconButton(onPressed: (){}, icon: const Icon(Icons.location_on_outlined,color: Colors.red,size: 30,))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: (){},
+                    child: const Text(
+                        "Valider toutes les commandes"
+                    )
+                )
               ],
             ),
             Expanded(

@@ -3,7 +3,8 @@ class Statics{
     'host1':'http://192.168.137.1:8000',
     'host2':'http://192.168.114.203:8000',
     'host3':'http://192.168.81.203:8000',
-    'host4':'http://192.168.17.203:8000'
+    'host4':'http://192.168.17.203:8000',
+    'host5':'http://192.168.187.203:8000'
   };
   static const String logo = 'assets/essivisarl.jpeg';
 

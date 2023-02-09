@@ -8,49 +8,63 @@ import '../controllers/get_connexion_info.dart';
 import '../statics/static_attributs.dart';
 import 'navigation_drawer.dart';
 
-class HomeScreen extends StatefulWidget{
-  Map<dynamic,dynamic> informations;
+class HomeScreen extends StatefulWidget {
+  Map<dynamic, dynamic> informations;
   List<String> menus;
   List<Customer>? customers;
-  HomeScreen({super.key, required this.informations,required this.menus,required this.customers});
+
+  HomeScreen(
+      {super.key,
+      required this.informations,
+      required this.menus,
+      required this.customers});
 
   @override
-  State<StatefulWidget> createState() => _HomeScreenState(this.informations,this.menus,this.customers);
-
+  State<StatefulWidget> createState() =>
+      _HomeScreenState(this.informations, this.menus, this.customers);
 }
-class _HomeScreenState extends State<HomeScreen>{
-  List<Customer>? customers =[];
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<Customer>? customers = [];
   Map informations = {};
   List<String> menus = [];
-  _HomeScreenState(this.informations,this.menus,this.customers);
+  TextEditingController firstName = TextEditingController();
+  TextEditingController lastName = TextEditingController();
+  TextEditingController phoneNumber = TextEditingController();
+  TextEditingController latitude = TextEditingController();
+  TextEditingController longitude = TextEditingController();
+
+  _HomeScreenState(this.informations, this.menus, this.customers);
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           Statics.textEnterprise,
-          style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w700
-          ),
+          style:
+              TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
       ),
-      drawer: NavigationDrawer( informations: informations,menus:menus,customers: customers,),
+      drawer: NavigationDrawer(
+        informations: informations,
+        menus: menus,
+        customers: customers,
+      ),
       body: ListView.builder(
         itemCount: customers?.length,
-        itemBuilder: (context,index){
+        itemBuilder: (context, index) {
           if (kDebugMode) {
-            print("******************************** ${customers?.length} ********************************");
+            print(
+                "******************************** ${customers?.length} ********************************");
           }
-          return MyWidget().orderWidget(context,customers?.elementAt(index));
+          return MyWidget().orderWidget(context, customers?.elementAt(index));
         },
       ),
-      floatingActionButton: MyWidget().floatingActionButton(context),
+      floatingActionButton: MyWidget().floatingActionButton(
+          context, firstName, lastName, phoneNumber, latitude, longitude),
     );
   }
-
 }

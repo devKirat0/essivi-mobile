@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.transparent,
                   child: Column(
                     children: [
-                      MyWidget().imageEssivi(15, 10),
+                      MyWidget().imageEssivi(context,15, 10),
                       MyWidget().textEssivi("AGENT"),
                       MyWidget().textEssivi("ESSIVI-SARL"),
                       MyWidget().usernameInputWidget(15, 10,  "Nom d'utilisateur",_usernameController),
